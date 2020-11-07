@@ -6,8 +6,8 @@ This repo contains the configuration that help deploy UMA's liquidation and disp
 
 ### Dependencies
 
-- aws-cli (https://docs.aws.amazon.com/cli/index.html)[https://docs.aws.amazon.com/cli/index.html]
-- pulumi (https://www.pulumi.com/docs/) [https://www.pulumi.com/docs/] 
+- aws-cli (https://docs.aws.amazon.com/cli/index.html)
+- pulumi (https://www.pulumi.com/docs/)
 
 ### Configuration
 
