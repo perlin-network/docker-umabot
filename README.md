@@ -1,4 +1,4 @@
-# kubernetes-umabot
+# UMA Bots on AWS Fargate via Pulumi [WIP]
 
 ### Dependencies
 
