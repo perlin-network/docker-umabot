@@ -1,8 +1,8 @@
-# UMA Bots on AWS Fargate via Pulumi [WIP]
+# UMA Bots on AWS Fargate
 
 ### Introduction
 
-This repo contains the configuration that help deploy UMA's liquidation and disputer bots in a single command through Pulumi tool. 
+This repo contains the CI/CD configuration for Pulumi that helps deploy UMA's liquidation and disputer bots to AWS Fargate which allows running docker containers without having to manage servers or clusters. 
 
 ### Dependencies
 
@@ -11,17 +11,29 @@ This repo contains the configuration that help deploy UMA's liquidation and disp
 
 ### Configuration
 
+You will need to supply parameter values according to your environment at `Pulumi.dev.yaml` file.
 
-
+| Key               | Value                             | Required |
+|-------------------|-----------------------------------|----------|
+| empAddress        | EMP contract address              | Yes      |
+| infuraKey         | Infura API key                    | Yes      |
+| privateKey        | Ethereum private key for your bot | Yes      |
+| pageDutyAPI       | PageDuty API key (Notification)   | No       |
+| pageDutyServiceID | PageDuty Service ID (Notification)| No       |
+| pageDutyFromEmail | PageDuty Email (Notification)     | No       |
 
 ### Deployment
 
-Assuming you've already setup the credential of AWS CLI & Pulumi. 
-
-To deploy the bots to ECS, you should run the command:
+Assuming you've already setup the credential of AWS CLI & Pulumi, once ready you can setup liquidation and disputer bots on your AWS account by the following scripts:
 
 ```
 pulumi up
+```
+
+To get a log stream from the container, use (Or checkout on Cloudwatch)
+
+```
+pulumi logs --follow
 ```
 
 
